@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnóstico de operación · SINGU</title>
+<meta name="description" content="Seis preguntas para saber qué tan expuesta está la operación de tus naves.">
+<style>
+:root{--navy:#0A355B;--ink:#14212e;--muted:#5b6b7a;--bg:#f3f5f8;--card:#fff;--line:#e3e8ee;--soft:#e6eef7;--ok:#1d8a4c;--mid:#b7791f;--bad:#c9372c}
+@media (prefers-color-scheme:dark){:root{--ink:#eef2f6;--muted:#9fb0c0;--bg:#0b1420;--card:#111d2b;--line:#22334a;--soft:#1c3550}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;display:flex;justify-content:center;min-height:100vh}
+.wrap{width:100%;max-width:460px;background:var(--card);min-height:100vh;display:flex;flex-direction:column}
+header{background:var(--navy);padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
+header svg{height:22px;width:auto}
+header a{color:#cfe0f2;font-size:14px;text-decoration:none}
+main{padding:24px 20px 32px;flex:1}
+.pill{display:inline-block;background:var(--soft);color:var(--navy);font-size:12px;font-weight:700;letter-spacing:.06em;padding:5px 12px;border-radius:999px}
+@media (prefers-color-scheme:dark){.pill{color:#cfe0f2}}
+h1{font-size:28px;line-height:1.15;margin:14px 0 10px}
+h2{font-size:22px;line-height:1.2;margin:14px 0 18px}
+p.lead{color:var(--muted);margin:0 0 18px}
+ul.checks{list-style:none;padding:0;margin:0 0 26px}
+ul.checks li{padding-left:28px;position:relative;margin:8px 0}
+ul.checks li:before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:6px;background:#d8f5da;color:#1d8a4c;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;border-radius:12px;border:2px solid var(--navy);background:var(--card);color:var(--navy);font:inherit;font-weight:650;text-decoration:none;cursor:pointer;margin-top:10px}
+.btn.primary{background:var(--navy);color:#fff}
+@media (prefers-color-scheme:dark){.btn{color:#cfe0f2;border-color:#4f7aa6}.btn.primary{background:#2a5f92;border-color:#2a5f92;color:#fff}}
+.btn:disabled{opacity:.45;cursor:default}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+.top button{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:0}
+.bar{height:5px;background:var(--line);border-radius:3px;margin:10px 0 4px;overflow:hidden}
+.bar div{height:100%;background:var(--navy);transition:width .25s}
+@media (prefers-color-scheme:dark){.bar div{background:#4f7aa6}}
+.opt{display:block;width:100%;text-align:left;padding:15px 16px;margin:0 0 10px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.opt:hover,.opt.sel{border-color:var(--navy);background:var(--soft)}
+.score{display:flex;align-items:center;gap:16px;margin:16px 0 10px}
+.ring{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;flex:none}
+.band{font-size:20px;font-weight:700;margin:0}
+.reading{margin:6px 0 20px}
+.focos h3{font-size:15px;margin:22px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.foco{border-left:3px solid var(--mid);padding:6px 0 6px 12px;margin:0 0 12px}
+.cta{margin-top:26px;padding:18px;border-radius:14px;background:var(--soft)}
+.cta h3{margin:0 0 4px;font-size:18px}
+.cta p{margin:0 0 12px;color:var(--muted);font-size:14px}
+input{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:10px;font:inherit;margin:0 0 10px;background:var(--card);color:var(--ink)}
+.ic{width:20px;height:20px;flex:none}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><svg width="678" height="141" viewBox="0 0 678 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6081_23294)">
+<mask id="mask0_6081_23294" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="138" height="141">
+<path d="M137.124 0H0V140.228H137.124V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_6081_23294)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M109.306 42.0728C118.567 32.0028 131.24 15.7098 136.843 2.62494L136.999 112.059C137.067 127.584 124.761 140.206 109.564 140.203L1.68542 140.184C4.42372 134.628 29.1945 110.876 35.6212 105.606C47.478 95.8803 71.4876 76.5976 83.1883 66.6791C90.0231 60.8846 100.36 51.8093 109.309 42.0756L109.306 42.0728Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48.1986 57.6128C51.6844 56.4612 57.81 54.4888 62.7663 53.1578C67.7472 51.827 78.5278 48.9579 82.014 47.6802C85.4752 46.4249 92.9698 43.7883 97.8248 40.5101C102.68 37.2571 107.885 33.7239 112.069 27.4281C116.254 21.1294 116.9 16.4951 117.149 15.1894C117.398 13.9089 118.195 7.43094 117.995 4.43571C117.795 1.44049 117.647 0.109589 117.647 0.109589L27.5023 0.148815C12.3103 0.154419 0.0180392 12.7713 0.0837584 28.2909L0.313776 82.5525C0.313776 82.5525 9.55283 76.2286 18.8904 70.5437C28.228 64.8586 44.7127 58.7671 48.1986 57.6128Z" fill="white"/>
+</g>
+<path d="M252.367 26.8439C247.715 25.4388 243.334 24.7303 239.206 24.7303C232.969 24.7303 228.029 26.165 224.386 29.0341C220.743 31.9035 218.916 35.8296 218.916 40.8065C218.916 45.7835 221.054 49.6566 225.337 52.7385C229.62 55.8263 235.719 58.8844 243.645 61.913C249.559 64.0798 254.557 66.4353 258.627 68.974C262.697 71.5189 266.08 75.0375 268.772 79.5303C271.47 84.0232 272.813 89.7322 272.813 96.6575C272.813 102.933 271.28 108.619 268.213 113.708C265.146 118.797 260.789 122.8 255.134 125.722C249.479 128.645 242.85 130.109 235.241 130.109C228.156 130.109 221.343 128.946 214.794 126.62C208.24 124.294 202.481 121.342 197.518 117.77L204.332 105.265C208.24 108.294 212.944 110.868 218.437 112.976C223.931 115.09 229.061 116.14 233.817 116.14C239.944 116.14 245.311 114.517 249.905 111.27C254.499 108.023 256.8 103.205 256.8 96.8229C256.8 91.409 254.868 87.1111 251.012 83.9169C247.15 80.7228 241.737 77.7237 234.762 74.9076C228.312 72.416 222.951 69.9837 218.674 67.5987C214.396 65.2193 210.719 61.9427 207.658 57.7743C204.591 53.6121 203.064 48.3872 203.064 42.1056C203.064 32.9072 206.205 25.4624 212.494 19.7828C218.783 14.1033 226.946 11.0982 236.987 10.7735C249.352 10.7735 260.817 13.9143 271.383 20.1902L265.521 32.364C261.399 30.0909 257.013 28.255 252.361 26.8439H252.367Z" fill="white"/>
+<path d="M312.283 11.4242V128.806H296.902V11.4242H312.283Z" fill="white"/>
+<path d="M430.182 11.3428L430.497 96.2528L352.552 14.1589H352.541C352.401 14.0291 351.018 12.3465 349.29 11.7561C347.56 11.1657 345.687 11.1657 345.687 11.1657V128.724H361.221L360.904 45.1132L436.176 123.364C436.176 123.364 436.198 123.381 436.239 123.422C436.631 123.795 438.737 125.92 440.366 126.882C443.077 128.482 445.555 128.653 445.555 128.653V11.3428H430.182Z" fill="white"/>
+<path d="M548.397 126.518C540.951 128.898 534.051 130.09 527.709 130.09C515.765 130.09 505.252 127.575 496.167 122.539C487.076 117.509 480.079 110.607 475.161 101.84C470.243 93.0727 467.787 83.2251 467.787 72.291C467.787 59.521 470.43 48.4512 475.714 39.0874C480.999 29.7238 488.13 22.5566 497.111 17.5737C506.093 12.5966 515.921 10.1052 526.597 10.1052C533.041 10.1052 539.117 10.8904 544.823 12.4609C550.53 14.0313 555.656 16.1154 560.199 18.7131L555.125 33.1599C551.74 31.2116 547.488 29.5053 542.362 28.0472C537.238 26.5889 532.616 25.8568 528.492 25.8568C519.617 25.8568 511.772 27.6988 504.951 31.3771C498.133 35.0611 492.875 40.3037 489.181 47.1286C485.479 53.9475 483.634 61.906 483.634 70.9922C483.634 79.4347 485.485 86.9563 489.181 93.5629C492.881 100.163 498.108 105.282 504.877 108.907C511.638 112.532 519.357 114.345 528.021 114.345C532.038 114.345 535.946 113.937 539.752 113.128C543.556 112.314 546.726 111.156 549.262 109.639V86.4192H526.436V71.317H564.796V118.725C561.311 121.541 555.84 124.139 548.391 126.518H548.397Z" fill="white"/>
+<path d="M610.145 101.287C612.574 105.456 615.876 108.756 620.055 111.188C624.228 113.621 628.853 114.843 633.924 114.843C638.998 114.843 643.99 113.656 648.273 111.271C652.55 108.892 655.905 105.592 658.336 101.364C660.77 97.1429 661.986 92.4377 661.986 87.242V11.4242H677.041V87.7322C677.041 96.0685 675.141 103.454 671.335 109.895C667.531 116.337 662.353 121.314 655.8 124.832C649.245 128.351 641.953 130.11 633.924 130.11C625.896 130.11 618.757 128.351 612.21 124.832C605.657 121.314 600.504 116.337 596.755 109.895C593.003 103.454 591.13 96.0685 591.13 87.7322V11.4242H606.503V87.242C606.503 92.4377 607.719 97.1193 610.153 101.287H610.145Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_6081_23294">
+<rect width="678" height="140.228" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+<a href="../">← Juan</a></header>
+  <main id="app"></main>
+</div>
+<script>
+(() => {
+  const FIRST = "Juan", WA = "523311909251", MEETING = "https://meetings-eu1.hubspot.com/juan-carlos-rico", EVENTS = {"exni": "EXNI 2026", "ampi": "AMPI Guadalajara", "apiej": "APIEJ", "ampip": "AMPIP", "ifma": "IFMA México"};
+  const WA_ICON = "<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"#fff\" d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg>";
+  const code = (new URLSearchParams(location.search).get("e") || "").toLowerCase();
+  const ev = EVENTS[code];
+
+  const Q = [
+    {k: "size", q: "¿Cuántas naves o inmuebles operas?", o: [["1 a 5"], ["6 a 20"], ["21 a 100"], ["Más de 100"]]},
+    {k: "prev", q: "¿Dónde viven hoy tus mantenimientos preventivos?", o: [["En un software de mantenimiento", 2], ["En Excel o en un calendario", 1], ["En WhatsApp y correos", 0], ["En la cabeza de alguien del equipo", 0]],
+     f: "Tus preventivos dependen de que alguien se acuerde. Empieza por calendarizar los equipos críticos, como contra incendio y subestación."},
+    {k: "gar", q: "Cuando falla un equipo, ¿sabes si sigue en garantía?", o: [["Sí, lo vemos en el sistema", 2], ["Hay que buscar el PDF en el correo", 1], ["Casi nunca lo revisamos", 0]],
+     f: "Es probable que estés pagando reparaciones que seguían en garantía. Liga cada garantía a su equipo, con fecha de vencimiento."},
+    {k: "nnn", q: "¿Tienes claro qué mantenimiento le toca al inquilino por contrato?", o: [["Sí, y le damos seguimiento", 2], ["Está en el contrato, pero no lo seguimos", 1], ["No lo tenemos claro", 0]],
+     f: "Parte del mantenimiento que pagas puede tocarle al inquilino. Revisa las obligaciones de cada contrato y dales seguimiento."},
+    {k: "ci", q: "¿Puedes mostrar la evidencia de la última prueba de contra incendio de cada nave?", o: [["Sí, en minutos, con fotos y fecha", 2], ["Sí, pero tardaría días en juntarla", 1], ["No estoy seguro de que exista", 0]],
+     f: "Si mañana te la pide la aseguradora o protección civil, vas a tardar. Guarda cada prueba con foto y fecha."},
+    {k: "fall", q: "¿Cómo te llegan las fallas que reporta un inquilino?", o: [["Por una plataforma, con ticket", 2], ["Por correo o llamada", 1], ["Por WhatsApp, a quien conteste", 0]],
+     f: "Las fallas que llegan por WhatsApp se pierden y no dejan historial. Un solo canal con ticket te deja medir tiempos de respuesta."},
+  ];
+  const BANDS = [
+    [3, "Operación en riesgo", "var(--bad)", "Hoy tu operación depende de que las personas correctas se acuerden. Cuando alguien se va, se pierde información y se pagan cosas que no te tocaban."],
+    [7, "Operación a medias", "var(--mid)", "La información existe, pero está repartida entre correos, Excel y WhatsApp. Juntarla en un solo lugar es el cambio que más rápido se nota."],
+    [10, "Operación bajo control", "var(--ok)", "Vas bien. El siguiente paso es medir tiempos de respuesta y costo de mantenimiento por nave."],
+  ];
+
+  const app = document.getElementById("app");
+  const A = {};
+  let step = -1;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+  function cover() {
+    app.innerHTML = `
+      <span class="pill">DIAGNÓSTICO · 60 SEGUNDOS</span>
+      <h1>¿Qué tan expuesta está la operación de tus naves?</h1>
+      <p class="lead">Seis preguntas sobre preventivos, garantías, contratos y contra incendio. Al final ves tu resultado y en qué enfocarte primero.</p>
+      <ul class="checks"><li>Seis preguntas de opción múltiple</li><li>Resultado al instante, sin registrarte</li></ul>
+      <button class="btn primary" id="go">Empezar</button>`;
+    document.getElementById("go").onclick = () => { step = 0; render(); };
+  }
+
+  function question() {
+    const q = Q[step];
+    app.innerHTML = `
+      <div class="top"><button id="back">← Atrás</button><span>Paso ${step + 1} de ${Q.length}</span></div>
+      <div class="bar"><div style="width:${100 * step / Q.length}%"></div></div>
+      <h2>${esc(q.q)}</h2>
+      ${q.o.map((o, i) => `<button class="opt${A[q.k] === i ? " sel" : ""}" data-i="${i}">${esc(o[0])}</button>`).join("")}`;
+    document.getElementById("back").onclick = () => { step--; render(); };
+    app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+      A[q.k] = +b.dataset.i; step++; render();
+    });
+  }
+
+  function result() {
+    const scored = Q.filter(q => q.f);
+    const pts = scored.reduce((s, q) => s + q.o[A[q.k]][1], 0);
+    const max = scored.length * 2;
+    const [, band, color, reading] = BANDS.find(b => pts <= b[0]);
+    const focos = scored.filter(q => q.o[A[q.k]][1] < 2).sort((a, b) => q2(a) - q2(b)).slice(0, 3);
+    function q2(q) { return q.o[A[q.k]][1]; }
+    const size = Q[0].o[A.size][0];
+    app.innerHTML = `
+      <span class="pill">TU RESULTADO</span>
+      <div class="score">
+        <div class="ring" style="border:7px solid ${color};color:${color}">${pts}/${max}</div>
+        <div><p class="band">${band}</p><span class="lead" style="color:var(--muted)">Operas ${esc(size.toLowerCase())} naves o inmuebles</span></div>
+      </div>
+      <p class="reading">${reading}</p>
+      ${focos.length ? `<div class="focos"><h3>Dónde enfocarte primero</h3>${focos.map(q => `<div class="foco">${esc(q.f)}</div>`).join("")}</div>` : ""}
+      <div class="cta">
+        <h3>¿Quieres el checklist de obligaciones del inquilino?</h3>
+        <p>Te lo mando por WhatsApp junto con tu resultado. Te dice qué mantenimiento le toca a quién en un contrato NNN.</p>
+        <input id="name" placeholder="Tu nombre" autocomplete="name">
+        <input id="company" placeholder="Empresa" autocomplete="organization">
+        <a class="btn primary" id="wa" href="#">${WA_ICON}Recibir por WhatsApp</a>
+        ${MEETING ? `<a class="btn" id="meet" href="#">Agendar 20 minutos con ${esc(FIRST)}</a>` : ""}
+      </div>
+      <button class="btn" id="again" style="border-color:var(--line)">Volver a empezar</button>`;
+    const waBtn = document.getElementById("wa");
+    const msg = () => {
+      const n = document.getElementById("name").value.trim(), c = document.getElementById("company").value.trim();
+      let t = `Hola ${FIRST}, hice el diagnóstico de operación: ${pts}/${max} (${band}). Opero ${size.toLowerCase()} naves o inmuebles.`;
+      if (n) t += ` Soy ${n}${c ? " de " + c : ""}.`; else if (c) t += ` Soy de ${c}.`;
+      t += " Me interesa el checklist de obligaciones del inquilino.";
+      if (ev) t += ` Nos conocimos en ${ev}.`;
+      return t;
+    };
+    const upd = () => { waBtn.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg())}`; };
+    app.querySelectorAll("input").forEach(i => i.oninput = upd); upd();
+    const meet = document.getElementById("meet");
+    if (meet) {
+      const u = new URL(MEETING);
+      u.searchParams.set("utm_source", "diagnostico"); u.searchParams.set("utm_medium", ev ? "evento" : "tarjeta");
+      u.searchParams.set("utm_campaign", code || "tarjeta"); u.searchParams.set("utm_content", `${pts}-${max}`);
+      meet.href = u.toString();
+    }
+    document.getElementById("again").onclick = () => { for (const k in A) delete A[k]; step = -1; render(); };
+  }
+
+  function render() {
+    window.scrollTo(0, 0);
+    if (step < 0) cover(); else if (step < Q.length) question(); else result();
+  }
+  render();
+})();
+</script>
+</body>
+</html>
