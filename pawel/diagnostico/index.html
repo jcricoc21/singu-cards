@@ -80,14 +80,15 @@ input{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:10px;
   const FIRST = "Pawe\u0142", WA = "447824740142", MEETING = "https://singu.com/book-demo/", EVENTS = {"exni": "EXNI 2026", "ampi": "AMPI Guadalajara", "apiej": "APIEJ", "ampip": "AMPIP", "ifma": "IFMA México"};
   const WA_ICON = "<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"#fff\" d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg>", SLUG = "pawel";
   const gc = (name) => { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({path: name, event: true}); } catch (_) {} };
-  const T = {"title": "Portfolio Audit · SINGU", "pill": "PORTFOLIO AUDIT · 60 SECONDS", "h1": "How exposed is the operation of your properties?", "lead": "Six questions on preventive maintenance, warranties, leases and fire protection. At the end you see your score and where to start.", "checks": ["Six multiple-choice questions", "Instant result, no sign-up"], "start": "Start", "back": "← Back", "step": "Step {n} of {t}", "Q": [{"k": "size", "q": "How many buildings or properties do you operate?", "o": [["1 to 5"], ["6 to 20"], ["21 to 100"], ["More than 100"]]}, {"k": "prev", "q": "Where does your preventive maintenance live today?", "o": [["In maintenance software", 2], ["In Excel or a calendar", 1], ["In WhatsApp and emails", 0], ["In someone's head", 0]], "f": "Your preventive maintenance depends on someone remembering. Start by scheduling critical assets such as fire pumps and substations."}, {"k": "gar", "q": "When equipment fails, do you know if it is still under warranty?", "o": [["Yes, we see it in the system", 2], ["We have to dig for the PDF in email", 1], ["We rarely check", 0]], "f": "You are probably paying for repairs that were still under warranty. Link each warranty to its asset, with the expiry date."}, {"k": "nnn", "q": "Do you know which maintenance the tenant must cover under the lease?", "o": [["Yes, and we track it", 2], ["It is in the lease, but we don't track it", 1], ["It is not clear to us", 0]], "f": "Some of the maintenance you pay for may be the tenant's. Review the obligations in each lease and track them."}, {"k": "ci", "q": "Can you show evidence of the last fire system test for each building?", "o": [["Yes, in minutes, with photos and date", 2], ["Yes, but it would take days to gather", 1], ["I'm not sure it exists", 0]], "f": "If your insurer or an inspector asks tomorrow, it will take you a while. Store every test with photos and the date."}, {"k": "fall", "q": "How do tenants report faults?", "o": [["Through a platform, with a ticket", 2], ["By email or phone", 1], ["By WhatsApp, to whoever answers", 0]], "f": "Faults reported by WhatsApp get lost and leave no history. One channel with tickets lets you measure response times."}], "bands": [[3, "Operation at risk", "var(--bad)", "Today your operation depends on the right people remembering. When someone leaves, information is lost and you pay for things that were not yours to pay."], [7, "Partly under control", "var(--mid)", "The information exists, but it is spread across email, Excel and WhatsApp. Putting it in one place is the change you will notice fastest."], [10, "Under control", "var(--ok)", "You are in good shape. The next step is to measure response times and maintenance cost per building."]], "result": "YOUR RESULT", "operas": "You operate {size} buildings or properties", "focus": "Where to start", "cta_h": "Want the tenant obligations checklist?", "cta_p": "I'll send it on WhatsApp with your result. It shows which maintenance falls to whom under a triple net lease.", "name": "Your name", "company": "Company", "wa_btn": "Get it on WhatsApp", "meet": "Book a demo", "again": "Start over", "m1": "Hi {first}, I took the portfolio audit: {pts}/{max} ({band}). I operate {size} buildings or properties.", "m_nc": " I'm {n} from {c}.", "m_n": " I'm {n}.", "m_c": " I'm from {c}.", "m2": " I'd like the tenant obligations checklist.", "m_ev": " We met at {ev}."};
+  const T = {"title": "Portfolio Audit · SINGU", "pill": "PORTFOLIO AUDIT · 60 SECONDS", "h1": "How exposed is the operation of your properties?", "lead": "Seven questions on maintenance, warranties, leases and fire protection. At the end you see your score and where to start.", "checks": ["Seven multiple-choice questions", "Instant result, no sign-up"], "start": "Start", "back": "← Back", "step": "Step {n} of {t}", "Q": [{"k": "ptype", "q": "What type of properties do you operate?", "o": [["Industrial"], ["Retail"], ["Mixed use"], ["Offices"], ["QSR / quick-service restaurants"], ["Other", null, "other"]]}, {"k": "size", "q": "How many properties or sites do you operate?", "o": [["1 to 5"], ["6 to 20"], ["21 to 100"], ["More than 100"]]}, {"k": "prev", "q": "Where does your preventive maintenance live today?", "o": [["In maintenance software", 2], ["In Excel or a calendar", 1], ["In WhatsApp and emails", 0], ["In someone's head", 0]], "f": "Your preventive maintenance depends on someone remembering. Start by scheduling critical assets such as fire pumps and air conditioning."}, {"k": "gar", "q": "When equipment fails, do you know if it is still under warranty?", "o": [["Yes, we see it in the system", 2], ["We have to dig for the PDF in email", 1], ["We rarely check", 0]], "f": "You are probably paying for repairs that were still under warranty. Link each warranty to its asset, with the expiry date."}, {"k": "nnn", "q": "Do you know which maintenance the tenant or operator must cover under the contract?", "o": [["Yes, and we track it", 2], ["It is in the lease, but we don't track it", 1], ["It is not clear to us", 0]], "f": "Some of the maintenance you pay for may be someone else's. Review the obligations in each contract and track them."}, {"k": "ci", "q": "Can you show evidence of the last fire system test for each property?", "o": [["Yes, in minutes, with photos and date", 2], ["Yes, but it would take days to gather", 1], ["I'm not sure it exists", 0]], "f": "If your insurer or an inspector asks tomorrow, it will take you a while. Store every test with photos and the date."}, {"k": "fall", "q": "How do tenants report faults?", "o": [["Through a platform, with a ticket", 2], ["By email or phone", 1], ["By WhatsApp, to whoever answers", 0]], "f": "Faults reported by WhatsApp get lost and leave no history. One channel with tickets lets you measure response times."}], "bands": [[3, "Operation at risk", "var(--bad)", "Today your operation depends on the right people remembering. When someone leaves, information is lost and you pay for things that were not yours to pay."], [7, "Partly under control", "var(--mid)", "The information exists, but it is spread across email, Excel and WhatsApp. Putting it in one place is the change you will notice fastest."], [10, "Under control", "var(--ok)", "You are in good shape. The next step is to measure response times and maintenance cost per property."]], "result": "YOUR RESULT", "operas": "You operate {size} properties · {type}", "focus": "Where to start", "cta_h": "Want the maintenance obligations checklist?", "cta_p": "I'll send it on WhatsApp with your result. It shows which maintenance falls to the owner and which to the tenant.", "name": "Your name", "company": "Company", "wa_btn": "Get it on WhatsApp", "meet": "Book a demo", "again": "Start over", "m1": "Hi {first}, I took the portfolio audit: {pts}/{max} ({band}). I operate {size} properties ({type}).", "m_nc": " I'm {n} from {c}.", "m_n": " I'm {n}.", "m_c": " I'm from {c}.", "m2": " I'd like the maintenance obligations checklist.", "m_ev": " We met at {ev}.", "next": "Continue", "other_ph": "Which one?"};
   const code = window.SINGU_EV;
   const ev = EVENTS[code];
   if (ev) document.getElementById("backcard").href = "../?e=" + encodeURIComponent(code);
   const Q = T.Q, BANDS = T.bands;
   const fmt = (s, v) => s.replace(/\{(\w+)\}/g, (_, k) => v[k] ?? "");
   const app = document.getElementById("app");
-  const A = {};
+  const A = {}, X = {};
+  const ans = k => { const q = Q.find(q => q.k === k); if (!q || A[k] === undefined) return ""; const o = q.o[A[k]]; return o[2] === "other" ? (X[k] || o[0]) : o[0]; };
   let step = -1;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
 
@@ -103,13 +104,31 @@ input{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:10px;
 
   function question() {
     const q = Q[step];
+    const isOther = o => o[2] === "other";
+    const sel = A[q.k];
+    const showOther = sel !== undefined && q.o[sel] && isOther(q.o[sel]);
     app.innerHTML = `
       <div class="top"><button id="back">${esc(T.back)}</button><span>${esc(fmt(T.step, {n: step + 1, t: Q.length}))}</span></div>
       <div class="bar"><div style="width:${100 * step / Q.length}%"></div></div>
       <h2>${esc(q.q)}</h2>
-      ${q.o.map((o, i) => `<button class="opt${A[q.k] === i ? " sel" : ""}" data-i="${i}">${esc(o[0])}</button>`).join("")}`;
+      ${q.o.map((o, i) => `<button class="opt${sel === i ? " sel" : ""}" data-i="${i}">${esc(o[0])}</button>`).join("")}
+      <div id="otherbox" class="${showOther ? "" : "hidden"}">
+        <input id="othertxt" maxlength="60" placeholder="${esc(T.other_ph || "")}" value="${esc(X[q.k] || "")}">
+        <button class="btn primary" id="othernext">${esc(T.next || "Continue")}</button>
+      </div>`;
     document.getElementById("back").onclick = () => { step--; render(); };
-    app.querySelectorAll(".opt").forEach(b => b.onclick = () => { A[q.k] = +b.dataset.i; step++; render(); });
+    const box = document.getElementById("otherbox"), txt = document.getElementById("othertxt");
+    const next = () => { X[q.k] = txt.value.trim(); step++; render(); };
+    document.getElementById("othernext").onclick = next;
+    txt.onkeydown = e => { if (e.key === "Enter") next(); };
+    app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+      const i = +b.dataset.i;
+      A[q.k] = i;
+      if (isOther(q.o[i])) {
+        app.querySelectorAll(".opt").forEach(x => x.classList.toggle("sel", x === b));
+        box.classList.remove("hidden"); txt.focus();
+      } else { step++; render(); }
+    });
   }
 
   function result() {
@@ -119,12 +138,12 @@ input{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:10px;
     const max = scored.length * 2;
     const [, band, color, reading] = BANDS.find(b => pts <= b[0]);
     const focos = scored.filter(q => val(q) < 2).sort((a, b) => val(a) - val(b)).slice(0, 3);
-    const size = Q[0].o[A.size][0].toLowerCase();
+    const size = ans("size").toLowerCase(), type = ans("ptype");
     app.innerHTML = `
       <span class="pill">${esc(T.result)}</span>
       <div class="score">
         <div class="ring" style="border:7px solid ${color};color:${color}">${pts}/${max}</div>
-        <div><p class="band">${esc(band)}</p><span style="color:var(--muted)">${esc(fmt(T.operas, {size}))}</span></div>
+        <div><p class="band">${esc(band)}</p><span style="color:var(--muted)">${esc(fmt(T.operas, {size, type}))}</span></div>
       </div>
       <p class="reading">${esc(reading)}</p>
       ${focos.length ? `<div class="focos"><h3>${esc(T.focus)}</h3>${focos.map(q => `<div class="foco">${esc(q.f)}</div>`).join("")}</div>` : ""}
@@ -142,7 +161,7 @@ input{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:10px;
     waBtn.dataset.goatcounterClick = `${SLUG}-diag-whatsapp${code ? "-" + code : ""}`;
     const msg = () => {
       const n = document.getElementById("name").value.trim(), c = document.getElementById("company").value.trim();
-      let t = fmt(T.m1, {first: FIRST, pts, max, band, size});
+      let t = fmt(T.m1, {first: FIRST, pts, max, band, size, type});
       if (n && c) t += fmt(T.m_nc, {n, c}); else if (n) t += fmt(T.m_n, {n}); else if (c) t += fmt(T.m_c, {c});
       t += T.m2;
       if (ev) t += fmt(T.m_ev, {ev});
@@ -157,7 +176,7 @@ input{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:10px;
       u.searchParams.set("utm_campaign", code || "tarjeta"); u.searchParams.set("utm_content", `${pts}-${max}`);
       meet.href = u.toString();
     }
-    document.getElementById("again").onclick = () => { for (const k in A) delete A[k]; step = -1; render(); };
+    document.getElementById("again").onclick = () => { for (const k in A) delete A[k]; for (const k in X) delete X[k]; step = -1; render(); };
   }
 
   function render() {
