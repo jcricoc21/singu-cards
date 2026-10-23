@@ -33,6 +33,7 @@ h1{font-size:24px;margin:12px 0 2px}
 </style>
 </head>
 <body>
+<script>window.SINGU_EV=(function(){var q=(new URLSearchParams(location.search).get('e')||'').toLowerCase();if(q)return q;var d=new Date().toLocaleDateString('en-CA'),A={"exni": ["2026-11-11", "2026-11-12"]};for(var k in A){if(d>=A[k][0]&&d<=A[k][1])return k}return ''})();</script>
 <div class="card">
   <header><svg width="678" height="141" viewBox="0 0 678 141" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_6081_23294)">
@@ -70,7 +71,7 @@ h1{font-size:24px;margin:12px 0 2px}
 (() => {
   const EVENTS = {"exni": "EXNI 2026", "ampi": "AMPI Guadalajara", "apiej": "APIEJ", "ampip": "AMPIP", "ifma": "IFMA México"};
   const T = {"save": "Guardar contacto", "meet": "Agendar una llamada", "wa": "WhatsApp", "mail": "Correo", "call": "Llamar", "li": "Conectar en LinkedIn", "diag": "Diagnóstico de operación · 60 s", "web": "singu.com", "cust": "Clientes", "met": "Mucho gusto en {ev}", "wa_base": "Hola {first}, me interesa conocer más de SINGU.", "wa_ev": " Nos conocimos en {ev}.", "subj": "Nos conocimos en {ev}"};
-  const code = (new URLSearchParams(location.search).get("e") || "").toLowerCase();
+  const code = window.SINGU_EV;
   const ev = EVENTS[code];
   if (!ev) return;
   const fill = s => s.replace("{ev}", ev).replace("{first}", "Juan");
@@ -93,7 +94,7 @@ h1{font-size:24px;margin:12px 0 2px}
 <script>
 (() => {
   const qs = new URLSearchParams(location.search);
-  const code = (qs.get("e") || "").toLowerCase();
+  const code = window.SINGU_EV;
   const slug = "jc";
   const tag = k => `${slug}-${k}${code ? "-" + code : ""}`;
   document.querySelectorAll("a[data-k]").forEach(a => a.dataset.goatcounterClick = tag(a.dataset.k));
