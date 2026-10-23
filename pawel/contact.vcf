@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Malon;Paweł;;;
+FN:Paweł Malon
+ORG:SINGU
+TITLE:Group CEO
+EMAIL;TYPE=WORK:pawel.malon@singu.com
+TEL;TYPE=CELL:+44 7824 740142
+URL:https://www.linkedin.com/in/pawelmalon/
+URL:https://singu.com
+END:VCARD
