@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diagnóstico de operación · SINGU</title>
-<meta name="description" content="Seis preguntas para saber qué tan expuesta está la operación de tus naves.">
+
 <style>
 :root{--navy:#0A355B;--ink:#14212e;--muted:#5b6b7a;--bg:#f3f5f8;--card:#fff;--line:#e3e8ee;--soft:#e6eef7;--ok:#1d8a4c;--mid:#b7791f;--bad:#c9372c}
 @media (prefers-color-scheme:dark){:root{--ink:#eef2f6;--muted:#9fb0c0;--bg:#0b1420;--card:#111d2b;--line:#22334a;--soft:#1c3550}}
@@ -78,29 +78,12 @@ input{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:10px;
 (() => {
   const FIRST = "Juan", WA = "523311909251", MEETING = "https://meetings-eu1.hubspot.com/juan-carlos-rico", EVENTS = {"exni": "EXNI 2026", "ampi": "AMPI Guadalajara", "apiej": "APIEJ", "ampip": "AMPIP", "ifma": "IFMA México"};
   const WA_ICON = "<svg class=\"ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"#fff\" d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg>";
+  const T = {"title": "Diagnóstico de operación · SINGU", "pill": "DIAGNÓSTICO · 60 SEGUNDOS", "h1": "¿Qué tan expuesta está la operación de tus naves?", "lead": "Seis preguntas sobre preventivos, garantías, contratos y contra incendio. Al final ves tu resultado y en qué enfocarte primero.", "checks": ["Seis preguntas de opción múltiple", "Resultado al instante, sin registrarte"], "start": "Empezar", "back": "← Atrás", "step": "Paso {n} de {t}", "Q": [{"k": "size", "q": "¿Cuántas naves o inmuebles operas?", "o": [["1 a 5"], ["6 a 20"], ["21 a 100"], ["Más de 100"]]}, {"k": "prev", "q": "¿Dónde viven hoy tus mantenimientos preventivos?", "o": [["En un software de mantenimiento", 2], ["En Excel o en un calendario", 1], ["En WhatsApp y correos", 0], ["En la cabeza de alguien del equipo", 0]], "f": "Tus preventivos dependen de que alguien se acuerde. Empieza por calendarizar los equipos críticos, como contra incendio y subestación."}, {"k": "gar", "q": "Cuando falla un equipo, ¿sabes si sigue en garantía?", "o": [["Sí, lo vemos en el sistema", 2], ["Hay que buscar el PDF en el correo", 1], ["Casi nunca lo revisamos", 0]], "f": "Es probable que estés pagando reparaciones que seguían en garantía. Liga cada garantía a su equipo, con fecha de vencimiento."}, {"k": "nnn", "q": "¿Tienes claro qué mantenimiento le toca al inquilino por contrato?", "o": [["Sí, y le damos seguimiento", 2], ["Está en el contrato, pero no lo seguimos", 1], ["No lo tenemos claro", 0]], "f": "Parte del mantenimiento que pagas puede tocarle al inquilino. Revisa las obligaciones de cada contrato y dales seguimiento."}, {"k": "ci", "q": "¿Puedes mostrar la evidencia de la última prueba de contra incendio de cada nave?", "o": [["Sí, en minutos, con fotos y fecha", 2], ["Sí, pero tardaría días en juntarla", 1], ["No estoy seguro de que exista", 0]], "f": "Si mañana te la pide la aseguradora o protección civil, vas a tardar. Guarda cada prueba con foto y fecha."}, {"k": "fall", "q": "¿Cómo te llegan las fallas que reporta un inquilino?", "o": [["Por una plataforma, con ticket", 2], ["Por correo o llamada", 1], ["Por WhatsApp, a quien conteste", 0]], "f": "Las fallas que llegan por WhatsApp se pierden y no dejan historial. Un solo canal con ticket te deja medir tiempos de respuesta."}], "bands": [[3, "Operación en riesgo", "var(--bad)", "Hoy tu operación depende de que las personas correctas se acuerden. Cuando alguien se va, se pierde información y se pagan cosas que no te tocaban."], [7, "Operación a medias", "var(--mid)", "La información existe, pero está repartida entre correos, Excel y WhatsApp. Juntarla en un solo lugar es el cambio que más rápido se nota."], [10, "Operación bajo control", "var(--ok)", "Vas bien. El siguiente paso es medir tiempos de respuesta y costo de mantenimiento por nave."]], "result": "TU RESULTADO", "operas": "Operas {size} naves o inmuebles", "focus": "Dónde enfocarte primero", "cta_h": "¿Quieres el checklist de obligaciones del inquilino?", "cta_p": "Te lo mando por WhatsApp junto con tu resultado. Te dice qué mantenimiento le toca a quién en un contrato NNN.", "name": "Tu nombre", "company": "Empresa", "wa_btn": "Recibir por WhatsApp", "meet": "Agendar 20 minutos con {first}", "again": "Volver a empezar", "m1": "Hola {first}, hice el diagnóstico de operación: {pts}/{max} ({band}). Opero {size} naves o inmuebles.", "m_nc": " Soy {n} de {c}.", "m_n": " Soy {n}.", "m_c": " Soy de {c}.", "m2": " Me interesa el checklist de obligaciones del inquilino.", "m_ev": " Nos conocimos en {ev}."};
   const code = (new URLSearchParams(location.search).get("e") || "").toLowerCase();
   const ev = EVENTS[code];
   if (ev) document.getElementById("backcard").href = "../?e=" + encodeURIComponent(code);
-
-  const Q = [
-    {k: "size", q: "¿Cuántas naves o inmuebles operas?", o: [["1 a 5"], ["6 a 20"], ["21 a 100"], ["Más de 100"]]},
-    {k: "prev", q: "¿Dónde viven hoy tus mantenimientos preventivos?", o: [["En un software de mantenimiento", 2], ["En Excel o en un calendario", 1], ["En WhatsApp y correos", 0], ["En la cabeza de alguien del equipo", 0]],
-     f: "Tus preventivos dependen de que alguien se acuerde. Empieza por calendarizar los equipos críticos, como contra incendio y subestación."},
-    {k: "gar", q: "Cuando falla un equipo, ¿sabes si sigue en garantía?", o: [["Sí, lo vemos en el sistema", 2], ["Hay que buscar el PDF en el correo", 1], ["Casi nunca lo revisamos", 0]],
-     f: "Es probable que estés pagando reparaciones que seguían en garantía. Liga cada garantía a su equipo, con fecha de vencimiento."},
-    {k: "nnn", q: "¿Tienes claro qué mantenimiento le toca al inquilino por contrato?", o: [["Sí, y le damos seguimiento", 2], ["Está en el contrato, pero no lo seguimos", 1], ["No lo tenemos claro", 0]],
-     f: "Parte del mantenimiento que pagas puede tocarle al inquilino. Revisa las obligaciones de cada contrato y dales seguimiento."},
-    {k: "ci", q: "¿Puedes mostrar la evidencia de la última prueba de contra incendio de cada nave?", o: [["Sí, en minutos, con fotos y fecha", 2], ["Sí, pero tardaría días en juntarla", 1], ["No estoy seguro de que exista", 0]],
-     f: "Si mañana te la pide la aseguradora o protección civil, vas a tardar. Guarda cada prueba con foto y fecha."},
-    {k: "fall", q: "¿Cómo te llegan las fallas que reporta un inquilino?", o: [["Por una plataforma, con ticket", 2], ["Por correo o llamada", 1], ["Por WhatsApp, a quien conteste", 0]],
-     f: "Las fallas que llegan por WhatsApp se pierden y no dejan historial. Un solo canal con ticket te deja medir tiempos de respuesta."},
-  ];
-  const BANDS = [
-    [3, "Operación en riesgo", "var(--bad)", "Hoy tu operación depende de que las personas correctas se acuerden. Cuando alguien se va, se pierde información y se pagan cosas que no te tocaban."],
-    [7, "Operación a medias", "var(--mid)", "La información existe, pero está repartida entre correos, Excel y WhatsApp. Juntarla en un solo lugar es el cambio que más rápido se nota."],
-    [10, "Operación bajo control", "var(--ok)", "Vas bien. El siguiente paso es medir tiempos de respuesta y costo de mantenimiento por nave."],
-  ];
-
+  const Q = T.Q, BANDS = T.bands;
+  const fmt = (s, v) => s.replace(/\{(\w+)\}/g, (_, k) => v[k] ?? "");
   const app = document.getElementById("app");
   const A = {};
   let step = -1;
@@ -108,59 +91,57 @@ input{width:100%;padding:13px;border:1.5px solid var(--line);border-radius:10px;
 
   function cover() {
     app.innerHTML = `
-      <span class="pill">DIAGNÓSTICO · 60 SEGUNDOS</span>
-      <h1>¿Qué tan expuesta está la operación de tus naves?</h1>
-      <p class="lead">Seis preguntas sobre preventivos, garantías, contratos y contra incendio. Al final ves tu resultado y en qué enfocarte primero.</p>
-      <ul class="checks"><li>Seis preguntas de opción múltiple</li><li>Resultado al instante, sin registrarte</li></ul>
-      <button class="btn primary" id="go">Empezar</button>`;
+      <span class="pill">${esc(T.pill)}</span>
+      <h1>${esc(T.h1)}</h1>
+      <p class="lead">${esc(T.lead)}</p>
+      <ul class="checks">${T.checks.map(c => `<li>${esc(c)}</li>`).join("")}</ul>
+      <button class="btn primary" id="go">${esc(T.start)}</button>`;
     document.getElementById("go").onclick = () => { step = 0; render(); };
   }
 
   function question() {
     const q = Q[step];
     app.innerHTML = `
-      <div class="top"><button id="back">← Atrás</button><span>Paso ${step + 1} de ${Q.length}</span></div>
+      <div class="top"><button id="back">${esc(T.back)}</button><span>${esc(fmt(T.step, {n: step + 1, t: Q.length}))}</span></div>
       <div class="bar"><div style="width:${100 * step / Q.length}%"></div></div>
       <h2>${esc(q.q)}</h2>
       ${q.o.map((o, i) => `<button class="opt${A[q.k] === i ? " sel" : ""}" data-i="${i}">${esc(o[0])}</button>`).join("")}`;
     document.getElementById("back").onclick = () => { step--; render(); };
-    app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
-      A[q.k] = +b.dataset.i; step++; render();
-    });
+    app.querySelectorAll(".opt").forEach(b => b.onclick = () => { A[q.k] = +b.dataset.i; step++; render(); });
   }
 
   function result() {
     const scored = Q.filter(q => q.f);
-    const pts = scored.reduce((s, q) => s + q.o[A[q.k]][1], 0);
+    const val = q => q.o[A[q.k]][1];
+    const pts = scored.reduce((s, q) => s + val(q), 0);
     const max = scored.length * 2;
     const [, band, color, reading] = BANDS.find(b => pts <= b[0]);
-    const focos = scored.filter(q => q.o[A[q.k]][1] < 2).sort((a, b) => q2(a) - q2(b)).slice(0, 3);
-    function q2(q) { return q.o[A[q.k]][1]; }
-    const size = Q[0].o[A.size][0];
+    const focos = scored.filter(q => val(q) < 2).sort((a, b) => val(a) - val(b)).slice(0, 3);
+    const size = Q[0].o[A.size][0].toLowerCase();
     app.innerHTML = `
-      <span class="pill">TU RESULTADO</span>
+      <span class="pill">${esc(T.result)}</span>
       <div class="score">
         <div class="ring" style="border:7px solid ${color};color:${color}">${pts}/${max}</div>
-        <div><p class="band">${band}</p><span class="lead" style="color:var(--muted)">Operas ${esc(size.toLowerCase())} naves o inmuebles</span></div>
+        <div><p class="band">${esc(band)}</p><span style="color:var(--muted)">${esc(fmt(T.operas, {size}))}</span></div>
       </div>
-      <p class="reading">${reading}</p>
-      ${focos.length ? `<div class="focos"><h3>Dónde enfocarte primero</h3>${focos.map(q => `<div class="foco">${esc(q.f)}</div>`).join("")}</div>` : ""}
+      <p class="reading">${esc(reading)}</p>
+      ${focos.length ? `<div class="focos"><h3>${esc(T.focus)}</h3>${focos.map(q => `<div class="foco">${esc(q.f)}</div>`).join("")}</div>` : ""}
       <div class="cta">
-        <h3>¿Quieres el checklist de obligaciones del inquilino?</h3>
-        <p>Te lo mando por WhatsApp junto con tu resultado. Te dice qué mantenimiento le toca a quién en un contrato NNN.</p>
-        <input id="name" placeholder="Tu nombre" autocomplete="name">
-        <input id="company" placeholder="Empresa" autocomplete="organization">
-        <a class="btn primary" id="wa" href="#">${WA_ICON}Recibir por WhatsApp</a>
-        ${MEETING ? `<a class="btn" id="meet" href="#">Agendar 20 minutos con ${esc(FIRST)}</a>` : ""}
+        <h3>${esc(T.cta_h)}</h3>
+        <p>${esc(T.cta_p)}</p>
+        <input id="name" placeholder="${esc(T.name)}" autocomplete="name">
+        <input id="company" placeholder="${esc(T.company)}" autocomplete="organization">
+        <a class="btn primary" id="wa" href="#">${WA_ICON}${esc(T.wa_btn)}</a>
+        ${MEETING ? `<a class="btn" id="meet" href="#">${esc(fmt(T.meet, {first: FIRST}))}</a>` : ""}
       </div>
-      <button class="btn" id="again" style="border-color:var(--line)">Volver a empezar</button>`;
+      <button class="btn" id="again" style="border-color:var(--line)">${esc(T.again)}</button>`;
     const waBtn = document.getElementById("wa");
     const msg = () => {
       const n = document.getElementById("name").value.trim(), c = document.getElementById("company").value.trim();
-      let t = `Hola ${FIRST}, hice el diagnóstico de operación: ${pts}/${max} (${band}). Opero ${size.toLowerCase()} naves o inmuebles.`;
-      if (n) t += ` Soy ${n}${c ? " de " + c : ""}.`; else if (c) t += ` Soy de ${c}.`;
-      t += " Me interesa el checklist de obligaciones del inquilino.";
-      if (ev) t += ` Nos conocimos en ${ev}.`;
+      let t = fmt(T.m1, {first: FIRST, pts, max, band, size});
+      if (n && c) t += fmt(T.m_nc, {n, c}); else if (n) t += fmt(T.m_n, {n}); else if (c) t += fmt(T.m_c, {c});
+      t += T.m2;
+      if (ev) t += fmt(T.m_ev, {ev});
       return t;
     };
     const upd = () => { waBtn.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg())}`; };

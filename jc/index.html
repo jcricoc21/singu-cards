@@ -68,7 +68,7 @@ h1{font-size:24px;margin:12px 0 2px}
 <script>
 (() => {
   const EVENTS = {"exni": "EXNI 2026", "ampi": "AMPI Guadalajara", "apiej": "APIEJ", "ampip": "AMPIP", "ifma": "IFMA México"};
-  const T = {"save": "Guardar contacto", "meet": "Agendar una llamada", "wa": "WhatsApp", "mail": "Correo", "call": "Llamar", "li": "Conectar en LinkedIn", "web": "singu.com", "met": "Mucho gusto en {ev}", "wa_base": "Hola {first}, me interesa conocer más de SINGU.", "wa_ev": " Nos conocimos en {ev}.", "subj": "Nos conocimos en {ev}"};
+  const T = {"save": "Guardar contacto", "meet": "Agendar una llamada", "wa": "WhatsApp", "mail": "Correo", "call": "Llamar", "li": "Conectar en LinkedIn", "diag": "Diagnóstico de operación · 60 s", "web": "singu.com", "met": "Mucho gusto en {ev}", "wa_base": "Hola {first}, me interesa conocer más de SINGU.", "wa_ev": " Nos conocimos en {ev}.", "subj": "Nos conocimos en {ev}"};
   const code = (new URLSearchParams(location.search).get("e") || "").toLowerCase();
   const ev = EVENTS[code];
   if (!ev) return;
